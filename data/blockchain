@@ -6,10 +6,10 @@
             "version": 1,
             "prevBlockHash": "0000000000000000000000000000000000000000000000000000000000000000",
             "merkleRoot": "9535edbeefd4c879ed95098a67f372ca6509ce0e1a9f82a4e8ff97739040aa54",
-            "timestamp": 1742836628,
+            "timestamp": 1742896559,
             "bits": "ffff001f",
-            "nonce": 32613,
-            "blockHash": "0000197176cf1e79adfcadc9aa9e83c0cb14a39df7f46f2b9e3fbd34f5f730ed"
+            "nonce": 63462,
+            "blockHash": "000020b473b0c9558ba88f3a51f34bc605e7ccdd7efe4496dd64df6071c06ed2"
         },
         "Txcount": 1,
         "Txs": "Medusa Sent 0 BTC to Shiviel"
@@ -19,12 +19,12 @@
         "Blocksize": 1,
         "BlockHeader": {
             "version": 1,
-            "prevBlockHash": "0000197176cf1e79adfcadc9aa9e83c0cb14a39df7f46f2b9e3fbd34f5f730ed",
+            "prevBlockHash": "000020b473b0c9558ba88f3a51f34bc605e7ccdd7efe4496dd64df6071c06ed2",
             "merkleRoot": "8e853c7ae86bf364b4f0878480236e2e0f34149e66b5975cb412826c65798517",
-            "timestamp": 1742836632,
+            "timestamp": 1742896566,
             "bits": "ffff001f",
-            "nonce": 457,
-            "blockHash": "00009caf79662677c204cd89aeb8f6931981dc04d47e4cdbca21ca6b19c46d5d"
+            "nonce": 72776,
+            "blockHash": "000056accc138ab59db6c91659dc1770a98a3d510dc7234c001f5cd79c58ec9a"
         },
         "Txcount": 1,
         "Txs": "Medusa Sent 1 BTC to Shiviel"
@@ -34,12 +34,12 @@
         "Blocksize": 1,
         "BlockHeader": {
             "version": 1,
-            "prevBlockHash": "00009caf79662677c204cd89aeb8f6931981dc04d47e4cdbca21ca6b19c46d5d",
+            "prevBlockHash": "000056accc138ab59db6c91659dc1770a98a3d510dc7234c001f5cd79c58ec9a",
             "merkleRoot": "87a89673745120c21ea4bb0a6383e266543f61da56b15863a9ca327c710cb951",
-            "timestamp": 1742836632,
+            "timestamp": 1742896573,
             "bits": "ffff001f",
-            "nonce": 33572,
-            "blockHash": "0000f418bbf6e53680965e24b23379fa43d5674c9fdba36f68b3992e9f08659d"
+            "nonce": 18481,
+            "blockHash": "0000b41a1a86c823ffff124275057a9f0941a888552cacf758f5041af7de42cf"
         },
         "Txcount": 1,
         "Txs": "Medusa Sent 2 BTC to Shiviel"
@@ -49,12 +49,12 @@
         "Blocksize": 1,
         "BlockHeader": {
             "version": 1,
-            "prevBlockHash": "0000f418bbf6e53680965e24b23379fa43d5674c9fdba36f68b3992e9f08659d",
+            "prevBlockHash": "0000b41a1a86c823ffff124275057a9f0941a888552cacf758f5041af7de42cf",
             "merkleRoot": "f8a2e6aaf4054349db165b7dd94a17dd34a94e004e9bd2a02bb80fafb49d8e60",
-            "timestamp": 1742836637,
+            "timestamp": 1742896575,
             "bits": "ffff001f",
-            "nonce": 48097,
-            "blockHash": "000075e025beb102e2396365856a204991d2411414299b0a585019d7f0de270e"
+            "nonce": 125386,
+            "blockHash": "00002e7bab93add154b035373f87b3d46470cc34c3eec811a1c04b0fffcea204"
         },
         "Txcount": 1,
         "Txs": "Medusa Sent 3 BTC to Shiviel"
@@ -64,12 +64,12 @@
         "Blocksize": 1,
         "BlockHeader": {
             "version": 1,
-            "prevBlockHash": "000075e025beb102e2396365856a204991d2411414299b0a585019d7f0de270e",
+            "prevBlockHash": "00002e7bab93add154b035373f87b3d46470cc34c3eec811a1c04b0fffcea204",
             "merkleRoot": "dfa2b80f30418af494145a1994be1adeb1201f5d75c4615b982f221c63e75d18",
-            "timestamp": 1742836643,
+            "timestamp": 1742896589,
             "bits": "ffff001f",
-            "nonce": 36921,
-            "blockHash": "0000d58a82d9ab8f5d5e47c52a25a53567dab61e79fffb591d039894c4e30838"
+            "nonce": 14689,
+            "blockHash": "0000adb447324662fa43ea5f76787e6f52936b6e2160c3524613922c5f1829d7"
         },
         "Txcount": 1,
         "Txs": "Medusa Sent 4 BTC to Shiviel"
@@ -79,12 +79,12 @@
         "Blocksize": 1,
         "BlockHeader": {
             "version": 1,
-            "prevBlockHash": "0000d58a82d9ab8f5d5e47c52a25a53567dab61e79fffb591d039894c4e30838",
+            "prevBlockHash": "0000adb447324662fa43ea5f76787e6f52936b6e2160c3524613922c5f1829d7",
             "merkleRoot": "515911f698c14e9f43a6616470325ad92742780a40a71bad1c319dcdb564fc4b",
-            "timestamp": 1742836649,
+            "timestamp": 1742896590,
             "bits": "ffff001f",
-            "nonce": 4304,
-            "blockHash": "0000d4f050b22ad634b5f55dcc1769a633486232faf2c8f4077b221936d39030"
+            "nonce": 22179,
+            "blockHash": "0000a7b2725c878984caac3fd267d0d6fb4c1114600fd0e326944095836d04ca"
         },
         "Txcount": 1,
         "Txs": "Medusa Sent 5 BTC to Shiviel"
