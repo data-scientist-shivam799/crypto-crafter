@@ -5,13 +5,14 @@ from Blockchain.Backend.core.block import Block
 from Blockchain.Backend.core.blockheader import BlockHeader
 from Blockchain.Backend.util.util import hash256
 from Blockchain.Backend.core.database.database import BlockchainDB
+from Blockchain.Backend.core.Tx import CoinbaseTx
 
 ZERO_HASH = '0'*64
 VERSION = 1
 
 class Blockchain:
     def __init__(self):
-        self.GenesisBlock()
+        pass
     
     def write_on_disk(self, block):
         blockchainDB = BlockchainDB()
@@ -28,15 +29,22 @@ class Blockchain:
 
     def addBlock(self, BlockHeight, prevBlockHash):
         timestamp = int(time.time())
-        Transaction = f"Medusa Sent {BlockHeight} BTC to Shiviel"
-        merkleRoot = hash256(Transaction.encode()).hex() # combined hash of all the transactions
+        # Transaction = f"Medusa Sent {BlockHeight} BTC to Shiviel"
+        coinbaseInstance = CoinbaseTx(BlockHeight)
+        coinbaseTx = coinbaseInstance.CoinbaseTransaction()
+        merkleRoot = coinbaseTx.TxId
         bits = "ffff001f"
         blockheader = BlockHeader(VERSION, prevBlockHash, merkleRoot, timestamp, bits)
         blockheader.mine()
-        self.write_on_disk([Block(BlockHeight, 1, blockheader.__dict__, 1, Transaction).__dict__])
+        print(f"Block {BlockHeight} Mined Successfully with Nonce value of {blockheader.nonce}")
+        self.write_on_disk([Block(BlockHeight, 1, blockheader.__dict__, 1, coinbaseTx.to_dict()).__dict__])
 
     def main(self):
         i = 0
+        lastBlock = self.fetch_last_block()
+        if lastBlock is None:
+            self.GenesisBlock()
+            
         while i < 5:
             lastBlock = self.fetch_last_block()
             BlockHeight = lastBlock['Height'] + 1
