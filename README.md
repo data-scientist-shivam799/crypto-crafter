@@ -32,7 +32,7 @@ Welcome to **Crypto Crafter**! This project is a **step-by-step guide** to build
 
 ### ▶️ **Run the Blockchain**  
 ```bash
-python main.py
+python .\Blockchain\Backend\core\blockchain.py  
 ```
 ---
 
