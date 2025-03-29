@@ -57,6 +57,9 @@ class Tx:
 
         result += int_to_little_endian(self.locktime, 4)
         return result
+    
+    def sign_input(self, input_index, private_key, script_pubkey):
+        pass
 
     def is_coinbase(self):
         """

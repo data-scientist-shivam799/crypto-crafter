@@ -2,6 +2,7 @@ import sys
 sys.path.append(r'C:\Users\Shivam\Desktop\crypto-crafter')
 from Blockchain.Backend.core.EllepticCurve.EllepticCurve import Sha256Point
 from Blockchain.Backend.util.util import hash160, hash256
+from Blockchain.Backend.core.database.database import AccountDB
 import secrets
 
 class account:
@@ -12,8 +13,8 @@ class account:
 
         G = Sha256Point(Gx, Gy)
 
-        privateKey = secrets.randbits(256)
-        uncompressPublicKey = privateKey * G
+        self.privateKey = secrets.randbits(256)
+        uncompressPublicKey = self.privateKey * G
         xpoint = uncompressPublicKey.x
         ypoint = uncompressPublicKey.y
 
@@ -52,10 +53,11 @@ class account:
             num, mod = divmod(num, 58)
             result = BASE58_ALPHABET[mod] + result
 
-        PublicAddress = prefix + result
-        print(f"Private Key: {privateKey}")
-        print(f"Public Address: {PublicAddress}")
+        self.PublicAddress = prefix + result
+        print(f"Private Key: {self.privateKey}")
+        print(f"Public Address: {self.PublicAddress}")
 
 if __name__ == '__main__':
     acct = account()
     acct.createKeys()
+    AccountDB().write([acct.__dict__])

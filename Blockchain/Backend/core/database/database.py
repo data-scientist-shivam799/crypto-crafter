@@ -32,3 +32,8 @@ class BlockchainDB(BaseDB):
     def lastBlock(self):
         data = self.read()
         return data[-1] if data else None
+    
+class AccountDB(BaseDB):
+    def __init__(self):
+        self.filename = "account"
+        super().__init__()
