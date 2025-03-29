@@ -6,13 +6,15 @@ from Blockchain.Backend.core.blockheader import BlockHeader
 from Blockchain.Backend.util.util import hash256
 from Blockchain.Backend.core.database.database import BlockchainDB
 from Blockchain.Backend.core.Tx import CoinbaseTx
+from multiprocessing import Process, Manager
+from Blockchain.Frontend.run import main
 
 ZERO_HASH = '0'*64
 VERSION = 1
 
 class Blockchain:
-    def __init__(self):
-        pass
+    def __init__(self, utxos):
+        self.utxos = utxos
     
     def write_on_disk(self, block):
         blockchainDB = BlockchainDB()
@@ -27,6 +29,10 @@ class Blockchain:
         prevBlockHash = ZERO_HASH
         self.addBlock(BlockHeight, prevBlockHash)
 
+    def store_utxos_in_cache(self, Transaction):
+        """Keep track of all the unspent transaction in cache memory for fast retieval"""
+        self.utxos[Transaction.TxId] = Transaction
+
     def addBlock(self, BlockHeight, prevBlockHash):
         timestamp = int(time.time())
         # Transaction = f"Medusa Sent {BlockHeight} BTC to Shiviel"
@@ -36,6 +42,9 @@ class Blockchain:
         bits = "ffff001f"
         blockheader = BlockHeader(VERSION, prevBlockHash, merkleRoot, timestamp, bits)
         blockheader.mine()
+
+        self.store_utxos_in_cache(coinbaseTx)
+
         print(f"Block {BlockHeight} Mined Successfully with Nonce value of {blockheader.nonce}")
         self.write_on_disk([Block(BlockHeight, 1, blockheader.__dict__, 1, coinbaseTx.to_dict()).__dict__])
 
@@ -45,13 +54,18 @@ class Blockchain:
         if lastBlock is None:
             self.GenesisBlock()
             
-        while i < 5:
+        while True:
             lastBlock = self.fetch_last_block()
             BlockHeight = lastBlock['Height'] + 1
             prevBlockHash = lastBlock['BlockHeader']['blockHash']
             self.addBlock(BlockHeight, prevBlockHash)
-            i += 1
 
 if __name__ == '__main__':
-    blockchain = Blockchain()
-    blockchain.main()
+    with Manager() as manager:
+        utxos = manager.dict()
+
+        webapp = Process(target=main, args=(utxos,))
+        webapp.start()
+
+        blockchain = Blockchain(utxos)
+        blockchain.main()
