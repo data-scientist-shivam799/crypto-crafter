@@ -1,8 +1,3 @@
-""" 
-Copyright (c) 2021 Codiesalert.com
-These scripts should be used for commercial purpose without Codies Alert Permission
-Any violations may lead to legal action
-"""
 from FieldElement import FieldElement
 from Point import Point
 

@@ -1,10 +1,3 @@
-""" 
-Copyright (c) 2021 Codiesalert.com
-These scripts shouldn't be used for commercial purpose without Codies Alert Permission
-Any violations may lead to legal action
-"""
-
-
 class FieldElement:
     def __init__(self, num, prime):
         if num >= prime or num < 0:

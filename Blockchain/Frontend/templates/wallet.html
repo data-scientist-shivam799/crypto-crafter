@@ -2,28 +2,62 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dream Scape</title>
         <link rel="icon" href="/static/images/fav.PNG">
-        <link rel="stylesheet" href="/static/css/style.css">
-        <title>Codies Alert</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
-        <div class="wallet-container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Dream Scape</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Transactions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         
-            <h1> Send Bitcoin </h1>
-            
-            <form action="#" id = "form" method="post">
-                <label for="from">From Address:</label><br>
-                <input type="text" id="from" name="fromAddress" ><br>
-                <label for="to">To Address:</label><br>
-                <input type="text" id="to" name="toAddress" ><br><br>
-                <label for="amount">Amount:</label><br>
-                <input type="number" id="amount" name="Amount" ><br><br>
-                <span> {{ message }} </span> <br>
-                <input type="submit" value="Send">
-                
-            </form>
+        <!-- Form Container -->
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow p-4">
+                        <h2 class="text-center mb-4"><i class="fas fa-paper-plane"></i> Send Dreamcoin</h2>
+                        <form action="#" id="form" method="post">
+                            <div class="mb-3">
+                                <label for="from" class="form-label">From Address</label>
+                                <input type="text" id="from" name="fromAddress" class="form-control" placeholder="Enter sender's address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="to" class="form-label">To Address</label>
+                                <input type="text" id="to" name="toAddress" class="form-control" placeholder="Enter recipient's address">
+                            </div>
+                            <div class="mb-3">
+                                <label for="amount" class="form-label">Amount</label>
+                                <input type="number" id="amount" name="Amount" class="form-control" placeholder="Enter amount in DC">
+                            </div>
+                            <div class="text-danger text-center">{{ message }}</div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
